@@ -24,26 +24,32 @@ class Signin extends Component {
 		const {handleSubmit} = this.props;
 
 		return (
-			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-				<fieldset className='form-group'>
-					<label>Email:</label>
-					<Field name='email'
-						   placeholder='email'
-						   type='text'
-	                       component={formInput}/>
-				</fieldset>
-				<fieldset className='form-group'>
-					<label>Password:</label>
-					<Field name='password'
-						   placeholder='password'
-						   type='password'
-	                       component={formInput}/>
-				</fieldset>
-				{this.renderAlert()}
-				<button action='submit' className='btn btn-primary'>
-					Sign in
-				</button>
-			</form>
+			<div>
+				<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+					<fieldset className='form-group'>
+						<label>Email:</label>
+						<Field name='email'
+							   placeholder='email'
+							   type='text'
+		                       component={formInput}/>
+					</fieldset>
+					<fieldset className='form-group'>
+						<label>Password:</label>
+						<Field name='password'
+							   placeholder='password'
+							   type='password'
+		                       component={formInput}/>
+					</fieldset>
+					{this.renderAlert()}
+					<button action='submit' className='btn btn-primary'>
+						Sign in
+					</button>
+				</form>
+				<a href='http://localhost:3090/auth/facebook' 
+				   className='btn btn-primary'>
+					Continue with Facebook
+				</a>
+			</div>
 		);
 	}
 }

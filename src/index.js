@@ -9,6 +9,7 @@ import Header from './components/header';
 import Welcome from './components/welcome';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
+import FacebookAuth from './components/auth/facebookAuth';
 import Home from './components/home';
 import RequireAuth from './components/auth/require_auth';
 import reducers from './reducers';
@@ -32,6 +33,7 @@ render(
 				<Route exact path='/' component={Welcome}/>
 				<Route path='/signin' component={Signin}/>
 				<Route path='/signup' component={Signup}/>
+				<Route path='/auth/:token' component={FacebookAuth}/>
 				<Route path='/home' component={RequireAuth(Home)}/>
 			</div>
 		</Router>
