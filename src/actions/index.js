@@ -27,6 +27,14 @@ export function signupUser({ email, password }, history) {
 	}
 }
 
+export function facebookSignin(token, history) {
+	return function(dispatch){
+		dispatch({ type: AUTH_USER });
+		localStorage.setItem('token', token);
+		history.push('/home');
+	}
+}
+
 export function authError(error) {
 	return {
 		type: AUTH_ERROR,
