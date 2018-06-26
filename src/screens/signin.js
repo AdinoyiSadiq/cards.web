@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import {reduxForm, Field} from 'redux-form';
-import formInput from '../forms/formInput';
+import formInput from '../components/forms/formInput';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../actions';
 
-class Signup extends Component {
-	handleFormSubmit(formProps) {
-		// Call action creator to sign up the user
+class Signin extends Component {
+	handleFormSubmit({email, password}) {
 		const { history } = this.props;
-		this.props.signupUser(formProps, history)
+		this.props.signinUser({ email, password }, history);
 	}
 
 	renderAlert() {
@@ -22,7 +21,7 @@ class Signup extends Component {
 	}
 
 	render() {
-		const { handleSubmit } = this.props;
+		const {handleSubmit} = this.props;
 
 		return (
 			<div>
@@ -41,16 +40,9 @@ class Signup extends Component {
 							   type='password'
 		                       component={formInput}/>
 					</fieldset>
-					<fieldset className='form-group'>
-						<label>Confirm Password:</label>
-						<Field name='passwordConfirm'
-							   placeholder='confirm password'
-							   type='password'
-		                       component={formInput}/>
-					</fieldset>
 					{this.renderAlert()}
 					<button action='submit' className='btn btn-primary'>
-						Sign up
+						Sign in
 					</button>
 				</form>
 				<a href='http://localhost:3090/auth/facebook' 
@@ -62,35 +54,12 @@ class Signup extends Component {
 	}
 }
 
-function validate(formProps) {
-	const errors = {};
-
-	if (!formProps.email) {
-		errors.email = 'Please enter an email';
-	}
-
-	if (!formProps.password) {
-		errors.password = 'Please enter a password';
-	}
-
-	if (!formProps.passwordConfirm) {
-		errors.passwordConfirm = 'Please enter a password confirmation';
-	}
-
-	if (formProps.password !== formProps.passwordConfirm) {
-		errors.password = 'Passwords must match';
-	}
-
-	return errors;
-}
-
-Signup = reduxForm({
-    form: 'signup',
-    validate: validate
-})(Signup);
+Signin = reduxForm({
+    form: 'signin'
+})(Signin);
 
 function mapStateToProps(state) {
-	return { errorMessage: state.auth.error }
+	return { errorMessage: state.auth.error };
 }
 
-export default connect(mapStateToProps, actions)(Signup);
+export default connect(mapStateToProps, actions)(Signin);

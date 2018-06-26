@@ -9,7 +9,10 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div>{this.props.message}</div>
+			<div>
+				<div>This is the home screen</div>
+				<div>{this.props.message}</div>
+			</div>
 		);
 	}
 }
