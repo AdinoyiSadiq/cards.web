@@ -6,12 +6,17 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 
 import Header from './components/header';
-import Welcome from './components/welcome';
-import Signin from './components/auth/signin';
-import Signup from './components/auth/signup';
 import FacebookAuth from './components/auth/facebookAuth';
-import Home from './components/home';
 import RequireAuth from './components/auth/require_auth';
+
+import Welcome from './screens/welcome';
+import Signin from './screens/signin';
+import Signup from './screens/signup';
+import Home from './screens/home';
+import Profile from './screens/profile';
+import Messages from './screens/messages';
+import Saved from './screens/savedCards';
+
 import reducers from './reducers';
 
 import { AUTH_USER } from './actions/types';
@@ -35,6 +40,9 @@ render(
 				<Route path='/signup' component={Signup}/>
 				<Route path='/auth/:token' component={FacebookAuth}/>
 				<Route path='/home' component={RequireAuth(Home)}/>
+				<Route path='/profile' component={RequireAuth(Profile)}/>
+				<Route path='/messages' component={RequireAuth(Messages)}/>
+				<Route path='/saved' component={RequireAuth(Saved)}/>
 			</div>
 		</Router>
 	</Provider>	

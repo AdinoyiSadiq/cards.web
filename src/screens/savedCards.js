@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-export default class Welcome extends Component {
+class Saved extends Component {
 	render() {
 	    return (
 	    	<div>
-	      		Welcome to Cards
+	      		This is the saved cards screen
 	      	</div>
 	    );
 	}
 }
+
+export default Saved;
