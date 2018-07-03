@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {reduxForm, Field} from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import formInput from '../components/forms/formInput';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import cardImg from '../img/card.svg'
 
 class Signup extends Component {
 	handleFormSubmit(formProps) {
@@ -26,37 +27,51 @@ class Signup extends Component {
 
 		return (
 			<div>
-				<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-					<fieldset className='form-group'>
-						<label>Email:</label>
-						<Field name='email'
-							   placeholder='email'
-							   type='text'
-		                       component={formInput}/>
-					</fieldset>
-					<fieldset className='form-group'>
-						<label>Password:</label>
-						<Field name='password'
-							   placeholder='password'
-							   type='password'
-		                       component={formInput}/>
-					</fieldset>
-					<fieldset className='form-group'>
-						<label>Confirm Password:</label>
-						<Field name='passwordConfirm'
-							   placeholder='confirm password'
-							   type='password'
-		                       component={formInput}/>
-					</fieldset>
-					{this.renderAlert()}
-					<button action='submit' className='btn btn-primary'>
-						Sign up
+				<div className='vertical-center'>
+					<div className="container col-md-8" >
+						<div className="row">
+							<div className="col-sm">
+								<img src={cardImg} />
+							</div>
+							<div className="col-sm">
+								<div className='align-bottom mt-5'>
+									<h3>Get your Cards account now</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+									<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+										<fieldset className='form-group'>
+											<Field name='email'
+												placeholder='email'
+												type='text'
+												component={formInput} />
+										</fieldset>
+										<fieldset className='form-group'>
+											<Field name='password'
+												placeholder='password'
+												type='password'
+												component={formInput} />
+										</fieldset>
+										<fieldset className='form-group'>
+											<Field name='passwordConfirm'
+												placeholder='confirm password'
+												type='password'
+												component={formInput} />
+										</fieldset>
+										{this.renderAlert()}
+										<button action='submit' className='btn btn-primary'>
+											Sign up
 					</button>
-				</form>
-				<a href='http://localhost:3090/auth/facebook' 
-				   className='btn btn-primary'>
-					Continue with Facebook
-				</a>
+										<span className="or">or</span>
+										<a href='http://localhost:3090/auth/facebook'
+											className='btn btn-primary'>
+											Facebook signup
+									</a>
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -85,8 +100,8 @@ function validate(formProps) {
 }
 
 Signup = reduxForm({
-    form: 'signup',
-    validate: validate
+	form: 'signup',
+	validate: validate
 })(Signup);
 
 function mapStateToProps(state) {
