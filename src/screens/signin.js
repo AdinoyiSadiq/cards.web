@@ -51,12 +51,12 @@ class Signin extends Component {
 									{this.renderAlert()}
 									<button action='submit' className='btn btn-primary'>
 										Sign in
-					</button>
+									</button>
 									<span className="or">or</span>
 									<a href='http://localhost:3090/auth/facebook'
 										className='btn btn-primary'>
 										Facebook login
-				</a>
+									</a>
 								</form>
 							</div>
 						</div>
