@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="6302 250 667 600">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #ddd;
+      }
+
+      .cls-3 {
+        stroke: #ddd;
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        filter: url(#Rectangle_2);
+      }
+    </style>
+    <filter id="Rectangle_2" x="6302" y="250" width="667" height="600" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_27" data-name="Group 27" transform="translate(6088)">
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, -6088, 0)">
+      <rect id="Rectangle_2-2" data-name="Rectangle 2" class="cls-1" width="577" height="510" transform="translate(6347 285)"/>
+    </g>
+    <rect id="Rectangle_4" data-name="Rectangle 4" class="cls-2" width="159" height="510" transform="translate(259 285)"/>
+    <g id="Rectangle_5" data-name="Rectangle 5" class="cls-3" transform="translate(431 305)">
+      <rect class="cls-4" width="386" height="176" rx="10"/>
+      <rect class="cls-5" x="1.5" y="1.5" width="383" height="173" rx="8.5"/>
+    </g>
+    <rect id="Rectangle_6" data-name="Rectangle 6" class="cls-2" width="339" height="25" transform="translate(455 328)"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="20.5" cy="20.5" r="20.5" transform="translate(455 420)"/>
+    <rect id="Rectangle_7" data-name="Rectangle 7" class="cls-2" width="339" height="25" transform="translate(455 374)"/>
+    <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-2" width="386" height="224" rx="10" transform="translate(431 503)"/>
+    <rect id="Rectangle_9" data-name="Rectangle 9" class="cls-1" width="339" height="25" transform="translate(455 540)"/>
+    <rect id="Rectangle_10" data-name="Rectangle 10" class="cls-1" width="256" height="25" transform="translate(455 586)"/>
+  </g>
+</svg>

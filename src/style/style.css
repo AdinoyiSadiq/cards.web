@@ -3,3 +3,12 @@
 .error {
 	color: red;
 }
+.or{
+	padding: 0 10px 0 10px !important;
+}
+.vertical-center {
+	min-height: 100%;
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+  }
