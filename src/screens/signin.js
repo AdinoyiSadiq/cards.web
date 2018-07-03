@@ -50,6 +50,7 @@ class Signin extends Component {
 					Continue with Facebook
 				</a>
 			</div>
+			
 		);
 	}
 }

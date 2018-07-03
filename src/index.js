@@ -5,6 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 
+import './style/style.css';
+
 import Header from './components/header';
 import FacebookAuth from './components/auth/facebookAuth';
 import RequireAuth from './components/auth/require_auth';
@@ -20,7 +22,6 @@ import Saved from './screens/savedCards';
 import reducers from './reducers';
 
 import { AUTH_USER } from './actions/types';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);

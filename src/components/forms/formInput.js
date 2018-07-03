@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Input} from 'reactstrap';
+import { Input } from 'reactstrap';
 
 export default class FormInput extends Component {
     
