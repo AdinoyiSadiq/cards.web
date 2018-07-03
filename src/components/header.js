@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Navbar, Nav, NavItem } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions';
@@ -6,31 +7,35 @@ import * as actions from '../actions';
 class Header extends Component {
 	renderLinks() {
 		if (this.props.authenticated) {
-			return [
-				<li className='nav-item' key={1}>
-					<div className='nav-link' onClick={() => this.props.signoutUser()}>
-						Sign Out
-					</div>
-				</li>,
-				<li className='nav-item' key={2}>
-					<Link className='nav-link' to='/profile'>Profile</Link>
-				</li>,
-				<li className='nav-item' key={3}>
-					<Link className='nav-link' to='/saved'>Saved</Link>
-				</li>,
-				<li className='nav-item' key={4}>
-					<Link className='nav-link' to='/messages'>Messages</Link>
-				</li>
-			];
+			return (
+				<Nav>
+					<NavItem>
+						<div className='nav-link' onClick={() => this.props.signoutUser()}>
+							Sign Out
+						</div>
+					</NavItem>
+					<NavItem>
+						<Link className='nav-link' to='/messages'>Messages</Link>
+					</NavItem>
+					<NavItem>
+						<Link className='nav-link' to='/saved'>Saved</Link>
+					</NavItem>
+					<NavItem>
+						<Link className='nav-link' to='/profile'>Profile</Link>
+					</NavItem>
+				</Nav>
+			);
 		} else {
-			return [
-				<li className='nav-item' key={1}>
-					<Link className='nav-link' to='/signin'>Sign In</Link>
-				</li>,
-				<li className='nav-item' key={2}>
-					<Link className='nav-link' to='/signup'>Sign Up</Link>
-				</li>
-			];
+			return (
+				<Nav>
+					<NavItem>
+						<Link className='nav-link' to='/signin'>Sign In</Link>
+					</NavItem>
+					<NavItem>
+						<Link className='nav-link' to='/signup'>Sign Up</Link>
+					</NavItem>
+				</Nav>
+			);
 			
 		}
 	}
@@ -45,12 +50,12 @@ class Header extends Component {
 
 	render() {
 		return (
-			<nav className='navbar navbar-light'>
-				{this.renderLogo()}
-				<ul className='nav navbar-nav'>
+			<div>
+				<Navbar>
+					{this.renderLogo()}
 					{this.renderLinks()}
-				</ul>
-			</nav>
+				</Navbar>
+			</div>
 		);
 	}
 }
